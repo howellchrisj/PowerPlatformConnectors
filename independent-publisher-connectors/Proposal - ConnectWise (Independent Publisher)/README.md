@@ -1,39 +1,47 @@
 # ConnectWise (Independent Publisher)
+ConnectWise is a leading IT management software that provides solutions for managed service providers (MSPs) and technology professionals. This connector aims to streamline access to ConnectWise APIs, enabling users to integrate and automate key business processes such as ticketing, company and contact details.  As we build more endpoints to the connector, we can then allow this connector to have more functionality.
 
-## Introduction
-ConnectWise is a leading IT management software that provides solutions for managed service providers (MSPs) and technology professionals. This connector aims to streamline access to ConnectWise APIs, enabling users to integrate and automate key business processes such as ticketing, project management, and billing.
+## Publisher: Chris Howell, Opal Business Solutions
 
-## Key Features
-- Retrieve and manage service tickets.
-- Query company and contact information.
+## Prerequisites
+- API Member Public and Private Key
+- Knowledge of the Company Code
+- ClientID from ConnectWise Developer
 
-## Use Cases
-1. Automate service ticket selection and updates in ConnectWise directly from Power Automate.
-2. Generate reports on projects and billing within Power BI using Power Platform integrations.
-3. Sync contact and company data with other CRM tools.
-
-## API Documentation
-The connector is based on the [ConnectWise REST API](https://developer.connectwise.com/). Users will need valid API keys, ClientID and an active ConnectWise subscription to utilize the connector.
-
-## Collaboration and Contact Information
-This is an independent publisher connector. I welcome contributions and feedback to enhance its functionality.
-
-- **Author:** Chris Howell
-- **Contact:** chowell@opalbiz.com
-- **GitHub Profile:** [Your GitHub Link]
-
-## Connector Overview
-The connector will include the following operations:
+## Supported Operations
 - **Get Tickets:** Retrieve a list of service tickets.
 - **Create Ticket:** Add a new service ticket.
 - **Update Ticket:** Modify an existing service ticket.
 - **Get Companies:** Retrieve company details.
 - **Get Contacts:** Retrieve contact details.
 
-## Licensing
-This connector follows the licensing model outlined by the Independent Publisher program. It is not an official product of ConnectWise.
+## Operation 1
+Get Tickets allows for the retrieving of data from the service tickets
 
-## Status
-Proposal phase. Development will begin after approval from the community and Microsoft.
+## Operation 2
+Create Tickets allows for the creation of a new service ticket
+
+## Operation 3
+Update Ticket allows for the updating of an existing service ticket
+
+## Operation 4
+Get Companies allows for the retrieving of data from the company
+
+## Operation 5
+Get Contacts allows for the retrieving of data from the contact
+
+## Obtaining Credentials
+API Key is retrieved through ConnectWise Setup, Memebers and an API Member needs to be created.  Saving the Public and Private Key is important
+Company Code is required, which you can obtain when logging into ConnectWise
+ClientID is obtained through (https://developer.connectwise.com/)
+Once the API Key is obtained, and the Company Code is documented, you will need to convert the following to Base64
+  Convert: Company Code+Public Key:Private Key to Base64
+
+## Known Issues and Limitations
+Currently there are no limitations, and issues outside any limitations from the ConnectWise API side.
+
+
+
+
 
 
