@@ -31,7 +31,7 @@ Get Companies allows for the retrieving of data from the company
 Get Contacts allows for the retrieving of data from the contact
 
 ## Obtaining Credentials
-API Key is retrieved through ConnectWise Setup, Memebers and an API Member needs to be created.  Saving the Public and Private Key is important
+API Key is retrieved through ConnectWise Setup, Members and an API Member needs to be created.  Saving the Public and Private Key is important
 Company Code is required, which you can obtain when logging into ConnectWise
 ClientID is obtained through (https://developer.connectwise.com/)
 Once the API Key is obtained, and the Company Code is documented, you will need to convert the following to Base64
