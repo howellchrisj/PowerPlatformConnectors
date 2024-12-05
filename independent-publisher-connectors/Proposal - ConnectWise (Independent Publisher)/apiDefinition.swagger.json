@@ -15,8 +15,46 @@
     "application/json"
   ],
   "paths": {
-    "/v4_6_release/apis/3.0/sales/opportunities/3": {},
     "/v4_6_release/apis/3.0/service/tickets": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "GetTickets",
+        "operationId": "GetTickets",
+        "parameters": [
+          {
+            "name": "conditions",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ClientID",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "default": "application/json"
+          }
+        ],
+        "description": "Get Ticket Details based on Conditions and selecting certain fields"
+      },
       "post": {
         "summary": "Create Service Ticket",
         "description": "Create Service Ticket in ConnectWise",
@@ -126,51 +164,8 @@
             "schema": {}
           }
         }
-      },
-      "get": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "GetTickets",
-        "operationId": "GetTickets",
-        "parameters": [
-          {
-            "name": "conditions",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "fields",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "x-ms-visibility": "important"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json"
-          }
-        ],
-        "description": "Get Ticket Details based on Conditions and selecting certain fields"
       }
     },
-    "/v4_6_release/apis/3.0/sales/opportunities": {},
-    "/v4_6_release/apis/3.0//company/companies/": {},
-    "/v4_6_release/apis/3.0//company/companies/1019": {},
-    "/v4_6_release/apis/3.0//company/companies/{id}": {},
     "/v4_6_release/apis/3.0/company/companies/{id}": {
       "get": {
         "responses": {
@@ -264,7 +259,6 @@
         "description": "Company updates will be completed on this EndPoint"
       }
     },
-    "/v4_6_release/apis/3.0/system/members/{id}": {},
     "/v4_6_release/apis/3.0/service/tickets/{id}": {
       "get": {
         "responses": {
@@ -359,20 +353,7 @@
         ],
         "description": "Update a Ticket through a Patch"
       }
-    },
-    "/v4_6_release/apis/3.0/service/tickets/158222/notes": {},
-    "/v4_6_release/apis/3.0/service/tickets/{id}/notes": {},
-    "/v4_6_release/apis/3.0/sales/opportunities/{id}": {},
-    "/v4_6_release/apis/3.0/company/companies/:id": {},
-    "/v4_6_release/apis/3.0/service/tickets/{parentId}/notes": {},
-    "/v4_6_release/apis/3.0/project/projects/{id}": {},
-    "/v4_6_release/apis/3.0/project/tickets/": {},
-    "/v4_6_release/apis/3.0/system/audittrail": {},
-    "/v4_6_release/apis/3.0/project/tickets/{parentid}/allNotes": {},
-    "/v4_6_release/apis/3.0/project/projects": {},
-    "/v4_6_release/apis/3.0/project/tickets/:id": {},
-    "/v4_6_release/apis/3.0/project/tickets/{id}": {},
-    "/v4_6_release/apis/3.0/project/tickets": {}
+    }
   },
   "definitions": {},
   "parameters": {},
@@ -386,7 +367,7 @@
   },
   "security": [
     {
-      "basic-auth": []
+      "api_key": []
     }
   ],
   "tags": []
