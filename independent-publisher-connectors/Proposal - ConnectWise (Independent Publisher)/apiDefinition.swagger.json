@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "ConnectWise",
-    "description": "ConnectWise API Connector - This connector is designed to aid in the Creation, Updating, and Selection of records from ConnectWise"
+    "description": "ConnectWise PSA - This connector is designed to aid in the Creation, Updating, and Selection of records from ConnectWise"
   },
   "host": "api-na.myconnectwise.net",
   "basePath": "/",
