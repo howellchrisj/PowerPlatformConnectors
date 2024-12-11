@@ -3,7 +3,12 @@
   "info": {
     "version": "1.0.0",
     "title": "ConnectWise PSA",
-    "description": "ConnectWise PSA - This connector is designed to aid in the Creation, Updating, and Selection of records from ConnectWise"
+    "description": "ConnectWise PSA - This connector is designed to aid in the Creation, Updating, and Selection of records from ConnectWise",
+    "contact": {
+      "name": "Support",
+      "url": "https://support.connectwise.com",
+      "email": "support@connectwise.com"
+    }
   },
   "host": "api-na.myconnectwise.net",
   "basePath": "/",
@@ -30,27 +35,34 @@
             "name": "conditions",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "description": "Filters for retrieving tickets based on specific conditions.",
+            "x-ms-summary": "Ticket Conditions"
           },
           {
             "name": "fields",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "description": "Comma-separated list of fields to include in the response.",
+            "x-ms-summary": "Fields to Retrieve"
           },
           {
             "name": "ClientID",
             "in": "header",
             "required": true,
             "type": "string",
-            "x-ms-visibility": "important"
+            "description": "The Client ID used for API authentication.",
+            "x-ms-summary": "Client Identifier"
           },
           {
             "name": "Content-Type",
             "in": "header",
             "required": false,
             "type": "string",
-            "default": "application/json"
+            "default": "application/json",
+            "description": "The content type of the request payload.",
+            "x-ms-summary": "Content Type"
           }
         ],
         "description": "Get Ticket Details based on Conditions and selecting certain fields"
@@ -66,7 +78,7 @@
             "required": true,
             "type": "string",
             "description": "ClientID",
-            "x-ms-visibility": "important"
+            "x-ms-summary": "Client Identifier"
           },
           {
             "name": "Content-Type",
@@ -74,7 +86,8 @@
             "required": true,
             "type": "string",
             "default": "application/json",
-            "description": "Content-Type"
+            "description": "Content-Type",
+            "x-ms-summary": "Content Type"
           },
           {
             "name": "body",
@@ -85,11 +98,11 @@
                 "id": {
                   "type": "integer",
                   "format": "int32",
-                  "description": "id"
+                  "description": "The unique identifier of the ticket."
                 },
                 "summary": {
                   "type": "string",
-                  "description": "summary"
+                  "description": "A brief description of the ticket."
                 },
                 "board": {
                   "type": "object",
@@ -97,14 +110,14 @@
                     "id": {
                       "type": "integer",
                       "format": "int32",
-                      "description": "id"
+                      "description": "The unique identifier of the board."
                     },
                     "name": {
                       "type": "string",
-                      "description": "name"
+                      "description": "The name of the board."
                     }
                   },
-                  "description": "board"
+                  "description": "Details of the board associated with the ticket."
                 },
                 "status": {
                   "type": "object",
@@ -112,15 +125,14 @@
                     "id": {
                       "type": "integer",
                       "format": "int32",
-                      "description": "id"
+                      "description": "The unique identifier of the status."
                     },
                     "name": {
                       "type": "string",
-                      "description": "name",
-                      "title": "Company Name"
+                      "description": "The name of the status."
                     }
                   },
-                  "description": "status"
+                  "description": "Status information for the ticket."
                 },
                 "company": {
                   "type": "object",
@@ -128,14 +140,14 @@
                     "id": {
                       "type": "integer",
                       "format": "int32",
-                      "description": "id"
+                      "description": "The unique identifier of the company."
                     },
                     "name": {
                       "type": "string",
-                      "description": "name"
+                      "description": "The name of the company."
                     }
                   },
-                  "description": "company"
+                  "description": "Company details related to the ticket."
                 }
               },
               "default": {
@@ -166,99 +178,6 @@
         }
       }
     },
-    "/v4_6_release/apis/3.0/company/companies/{id}": {
-      "get": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "GetCompany",
-        "operationId": "GetCompany",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "x-ms-visibility": "important"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json"
-          }
-        ],
-        "description": "Get Company data from ConnectWise"
-      },
-      "patch": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "Patch Company",
-        "operationId": "PatchCompany",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "x-ms-visibility": "important"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "op": {
-                    "type": "string",
-                    "description": "op"
-                  },
-                  "path": {
-                    "type": "string",
-                    "description": "path"
-                  },
-                  "value": {
-                    "type": "string",
-                    "description": "value"
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "description": "Company updates will be completed on this EndPoint"
-      }
-    },
     "/v4_6_release/apis/3.0/service/tickets/{id}": {
       "get": {
         "responses": {
@@ -274,21 +193,26 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the ticket.",
+            "x-ms-summary": "Ticket ID"
           },
           {
             "name": "ClientID",
             "in": "header",
             "required": true,
             "type": "string",
-            "x-ms-visibility": "important"
+            "description": "The Client ID used for API authentication.",
+            "x-ms-summary": "Client Identifier"
           },
           {
             "name": "Content-Type",
             "in": "header",
             "required": false,
             "type": "string",
-            "default": "application/json"
+            "default": "application/json",
+            "description": "The content type of the request payload.",
+            "x-ms-summary": "Content Type"
           }
         ],
         "description": "Get Tickets based on the ID of the ticket"
@@ -307,22 +231,26 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the ticket to update.",
+            "x-ms-summary": "Ticket ID"
           },
           {
             "name": "ClientID",
             "in": "header",
             "required": true,
             "type": "string",
-            "default": "bdea5593-71af-44f6-a0dd-4858be57c0ca",
-            "x-ms-visibility": "important"
+            "description": "The Client ID used for API authentication.",
+            "x-ms-summary": "Client Identifier"
           },
           {
             "name": "Content-Type",
             "in": "header",
             "required": false,
             "type": "string",
-            "default": "application/json"
+            "default": "application/json",
+            "description": "The content type of the request payload.",
+            "x-ms-summary": "Content Type"
           },
           {
             "name": "body",
@@ -335,23 +263,129 @@
                 "properties": {
                   "op": {
                     "type": "string",
-                    "description": "op"
+                    "description": "The operation to perform, such as 'replace' or 'add'."
                   },
                   "path": {
                     "type": "string",
-                    "description": "path"
+                    "description": "The JSON path of the property to update."
                   },
                   "value": {
-                    "type": "object",
-                    "properties": {},
-                    "description": "value"
+                    "type": "string",
+                    "description": "The new value to assign to the specified path."
                   }
                 }
               }
-            }
+            },
+            "description": "Details of the patch operation to update the ticket.",
+            "x-ms-summary": "Patch Body"
           }
         ],
         "description": "Update a Ticket through a Patch"
+      }
+    },
+    "/v4_6_release/apis/3.0/company/companies/{id}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Get Company",
+        "operationId": "GetCompany",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The unique identifier of the company.",
+            "x-ms-summary": "Company ID"
+          },
+          {
+            "name": "ClientID",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "The Client ID used for API authentication.",
+            "x-ms-summary": "Client Identifier"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "default": "application/json",
+            "description": "The content type of the request payload.",
+            "x-ms-summary": "Content Type"
+          }
+        ],
+        "description": "Get details of a company based on its ID."
+      },
+      "patch": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Patch Company",
+        "operationId": "PatchCompany",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The unique identifier of the company to update.",
+            "x-ms-summary": "Company ID"
+          },
+          {
+            "name": "ClientID",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "The Client ID used for API authentication.",
+            "x-ms-summary": "Client Identifier"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "default": "application/json",
+            "description": "The content type of the request payload.",
+            "x-ms-summary": "Content Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "type": "string",
+                    "description": "The operation to perform, such as 'replace' or 'add'."
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "The JSON path of the property to update."
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "The new value to assign to the specified path."
+                  }
+                }
+              }
+            },
+            "description": "Details of the patch operation to update the company.",
+            "x-ms-summary": "Patch Body"
+          }
+        ],
+        "description": "Update a Company through a Patch operation."
       }
     }
   },
