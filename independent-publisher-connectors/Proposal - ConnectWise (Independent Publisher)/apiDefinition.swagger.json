@@ -177,221 +177,8 @@
           }
         }
       }
-    },
-    "/v4_6_release/apis/3.0/service/tickets/{id}": {
-      "get": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "Get Tickets ID",
-        "operationId": "GetTicketsID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The unique identifier of the ticket.",
-            "x-ms-summary": "Ticket ID"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "The Client ID used for API authentication.",
-            "x-ms-summary": "Client Identifier"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json",
-            "description": "The content type of the request payload.",
-            "x-ms-summary": "Content Type"
-          }
-        ],
-        "description": "Get Tickets based on the ID of the ticket"
-      },
-      "patch": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "PatchTicketUpdate",
-        "operationId": "PatchTicketUpdate",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The unique identifier of the ticket to update.",
-            "x-ms-summary": "Ticket ID"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "The Client ID used for API authentication.",
-            "x-ms-summary": "Client Identifier"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json",
-            "description": "The content type of the request payload.",
-            "x-ms-summary": "Content Type"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "op": {
-                    "type": "string",
-                    "description": "The operation to perform, such as 'replace' or 'add'."
-                  },
-                  "path": {
-                    "type": "string",
-                    "description": "The JSON path of the property to update."
-                  },
-                  "value": {
-                    "type": "string",
-                    "description": "The new value to assign to the specified path."
-                  }
-                }
-              }
-            },
-            "description": "Details of the patch operation to update the ticket.",
-            "x-ms-summary": "Patch Body"
-          }
-        ],
-        "description": "Update a Ticket through a Patch"
-      }
-    },
-    "/v4_6_release/apis/3.0/company/companies/{id}": {
-      "get": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "Get Company",
-        "operationId": "GetCompany",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The unique identifier of the company.",
-            "x-ms-summary": "Company ID"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "The Client ID used for API authentication.",
-            "x-ms-summary": "Client Identifier"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json",
-            "description": "The content type of the request payload.",
-            "x-ms-summary": "Content Type"
-          }
-        ],
-        "description": "Get details of a company based on its ID."
-      },
-      "patch": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "Patch Company",
-        "operationId": "PatchCompany",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The unique identifier of the company to update.",
-            "x-ms-summary": "Company ID"
-          },
-          {
-            "name": "ClientID",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "The Client ID used for API authentication.",
-            "x-ms-summary": "Client Identifier"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": false,
-            "type": "string",
-            "default": "application/json",
-            "description": "The content type of the request payload.",
-            "x-ms-summary": "Content Type"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "op": {
-                    "type": "string",
-                    "description": "The operation to perform, such as 'replace' or 'add'."
-                  },
-                  "path": {
-                    "type": "string",
-                    "description": "The JSON path of the property to update."
-                  },
-                  "value": {
-                    "type": "string",
-                    "description": "The new value to assign to the specified path."
-                  }
-                }
-              }
-            },
-            "description": "Details of the patch operation to update the company.",
-            "x-ms-summary": "Patch Body"
-          }
-        ],
-        "description": "Update a Company through a Patch operation."
-      }
     }
   },
-  "definitions": {},
-  "parameters": {},
-  "responses": {},
   "securityDefinitions": {
     "api_key": {
       "type": "apiKey",
@@ -404,5 +191,19 @@
       "api_key": []
     }
   ],
-  "tags": []
+  "tags": [],
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "https://www.opalbiz.com"
+    },
+    {
+      "propertyName": "Privacy policy",
+      "propertyValue": "https://www.opalbiz.com"
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": "Data"
+    }
+  ]
 }
